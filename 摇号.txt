@@ -1,0 +1,32 @@
+
+var array=
+["黄凯彬","李应龙","黄杏","沈崇昊","杨杰","刘小勇","黄仕金","梁月珊","陈穗熙"]
+// 初始化生成名单数组 
+var outArray=new Array();
+
+
+
+generateRandom(4);
+
+// 生成名单的方法 
+function generateRandom(count){ 
+	for(var i = 0 ; i < count; i++){ 
+		var rand = parseInt(Math.random()*array.length); 
+
+		outArray.push(array[rand]);
+		//剔除已经放到输出列表里的名单，保证不重复
+		array.splice(rand,1);
+		console.log(outArray[i]);
+
+	} 
+
+} 
+
+//判定是否在数组中
+function IsInArray(arr,val){ 
+
+	var testStr=','+arr.join(",")+","; 
+
+	return testStr.indexOf(","+val+",")!=-1; 
+
+} 
